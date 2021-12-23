@@ -1,42 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel = "stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class = "main_background">
-        <div id = "weatherInfoBlock_Kyiv" class ="weatherInfoBlock">
-            <span class = "cityName">Київ</span>
-            <span class ="temperature">10</span>
-            <div class="img_weather"></div>
+    <div class="main_background">
+        <div class="weatherInfoBlock"></div>
+
+
+    </div>
+
+
+    <template id="block">
+
+        <span class="cityName">{{name}}</span>
+        <span class="temperature">{{temp}}°F</span>
+        <div class="anotherInfoAboutWeather">
+            <span class="anotherWeatherElement" id="wind_direction">Ветер <br>{{wind_direction}}</span>
+            <span class="anotherWeatherElement" id="wind_speed">Скорость ветра <br>{{wind_speed}}м/сек</span>
+            <span class="anotherWeatherElement" id="pressure"> Давление <br>{{pressure}}мм</span>
+            <span class="anotherWeatherElement" id="sunrise">Восход <br> {{sunrise}}</span>
+            <span class="anotherWeatherElement" id="sunset">Закат <br> {{sunset}}</span>
+        </div>
+    </template>
+
+
+    <!-- <div class="img_weather"style="background-image: url('{{img}}');" ></div>
             <div class = "anotherInfoAboutWeather">
-                <span class = "anotherWeatherElement" id = "wind_direction">Направление ветра</span>
-                <span class = "anotherWeatherElement" id = "wind_speed">Скорость ветра</span>
-                <span class = "anotherWeatherElement" id = "pressure">Давление</span>
-                <span class = "anotherWeatherElement" id = "sunrise">Рассвет</span>
-                <span class = "anotherWeatherElement" id = "sunset">Закат</span>
-            </div>
-            <table>
+                <span class = "anotherWeatherElement" id = "wind_direction">{{wind_direction}}</span>
+                <span class = "anotherWeatherElement" id = "wind_speed">{{wind_speed}}</span>
+                <span class = "anotherWeatherElement" id = "pressure">{{pressure}}</span>
+                <span class = "anotherWeatherElement" id = "sunrise">{{sunrise}}</span>
+                <span class = "anotherWeatherElement" id = "sunset">{{sunset}}</span>
+            </div> -->
+    <!-- <table>
                 <tr class = "day">
-                    <th>Day1</th>
-                    <th>Day2</th>
-                    <th>Day3</th>
-                    <th>Day4</th>
-                    <th>Day5</th>
+                    <th>{{Day1}}</th>
+                    <th>{{Day2}}</th>
+                    <th>{{Day3}}</th>
+                    <th>{{Day4}}</th>
+                    <th>{{Day5}}</th>
                 </tr>
                 <tr class ="plan_temp">
-                    <td>10</td>
-                    <td>11</td>
-                    <td>12</td>
-                    <td>13</td>
-                    <td>14</td>
+                    <td>{{temperature1}}</td>
+                    <td>{{temperature2}}</td>
+                    <td>{{temperature3}}</td>
+                    <td>{{temperature4}}</td>
+                    <td>{{temperature5}}</td>
                 </tr>
                 <tr class ="imgPlanWeather">
-                    <td>img1</td>
+                    <td>{{img1}}</td>
                     <td>img2</td>
                     <td>img3</td>
                     <td>img4</td>
@@ -45,9 +64,10 @@
                 </tr>
                
 
-            </table>
-        </div>
-        <div id= "weatherInfoBlock_London" class ="weatherInfoBlock">
+            </table> -->
+
+
+    <!-- <div id= "weatherInfoBlock_London" class ="weatherInfoBlock">
             <span class = "cityName">Лондон</span>
             <span class ="temperature">10</span>
             <div class="img_weather"></div>
@@ -121,11 +141,13 @@
                     <td>img5</td>
                 </tr>  
             </table>
-        </div>
-    </div>
+        </div> -->
 
-    <script src="index.js">
 
-    </script>
+    <script src="index.js">  </script>
+    <script src="mustache.min.js"></script>
+
+
 </body>
+
 </html>

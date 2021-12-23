@@ -21,7 +21,7 @@
     background-size: cover;
 }
 
-#weatherInfoBlock_Kyiv{
+/* #weatherInfoBlock_Kyiv{
     background-image: url("img/Kyiv.jpg");   
 }
 
@@ -31,7 +31,7 @@
 
 #weatherInfoBlock_NY{
     background-image: url("img/NY.jpg");
-}
+} */
 
 span{
     display: block;
