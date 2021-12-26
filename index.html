@@ -20,13 +20,18 @@
     <template id="block">
 
         <span class="cityName">{{name}}</span>
-        <span class="temperature">{{temp}}°F</span>
+
+        <div class="temperature">
+            <span>{{temp}}°F</span>
+            <img class="img_weather" src="{{img}}"/>
+        </div>
+        
         <div class="anotherInfoAboutWeather">
-            <span class="anotherWeatherElement" id="wind_direction">Ветер <br>{{wind_direction}}</span>
-            <span class="anotherWeatherElement" id="wind_speed">Скорость ветра <br>{{wind_speed}}м/сек</span>
-            <span class="anotherWeatherElement" id="pressure"> Давление <br>{{pressure}}мм</span>
-            <span class="anotherWeatherElement" id="sunrise">Восход <br> {{sunrise}}</span>
-            <span class="anotherWeatherElement" id="sunset">Закат <br> {{sunset}}</span>
+            <span id="wind_direction">Ветер <br>{{wind_direction}}</span>
+            <span id="wind_speed">Скорость ветра <br>{{wind_speed}}м/сек</span>
+            <span id="pressure"> Давление <br>{{pressure}}мм</span>
+            <span id="sunrise">Восход <br> {{sunrise}}</span>
+            <span id="sunset">Закат <br> {{sunset}}</span>
         </div>
     </template>
 

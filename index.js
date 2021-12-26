@@ -1,11 +1,3 @@
-// let cityDiv = document.querySelector(".weatherInfoBlock");
-// let spanTemp = document.querySelector(".temperature");
-// let imgWeather = document.querySelector(".img_weather");
-// let wind_direction = document.querySelector("#wind_direction");
-// let wind_speed = document.querySelector("#wind_speed");
-// let pressure = document.querySelector("#pressure");
-// let sunrise = document.querySelector("#sunrise");
-// let sunset = document.querySelector("#sunset");
 
 class City {
     constructor(name, url, urlBackground) {
@@ -23,10 +15,10 @@ class City {
 }
 
 class CityInfo extends City {
-    constructor(name, temp, wind_direction, wind_speed, pressure, sunrise, sunset) {
+    constructor(name, temp, img, wind_direction, wind_speed, pressure, sunrise, sunset) {
         super(name);
         this.temp = temp;
-        //this.img = img;
+        this.img = img;
         this.wind_direction = wind_direction;
         this.wind_speed = wind_speed;
         this.pressure = pressure;
@@ -49,13 +41,13 @@ function getWeatherInfo(object) {
         .then(response => response.json())
         .then(json => {
             let temp = json.main.temp;
-            // let img = json.main.icon;
+            let img = getImgURL(json.weather[0].icon);
             let wind_direction = getWindDirection(json.wind.deg);
             let wind_speed = json.wind.speed;
             let pressure = json.main.pressure;
             let sunrise = getTime(json.sys.sunrise);
             let sunset = getTime(json.sys.sunset);
-            let cityInfo = new CityInfo("Киев", temp, wind_direction, wind_speed, pressure, sunrise, sunset);
+            let cityInfo = new CityInfo("Киев", temp,img, wind_direction, wind_speed, pressure, sunrise, sunset);
 
 
             let template = document.getElementById("block").innerHTML;
@@ -67,6 +59,10 @@ function getWeatherInfo(object) {
 
         })
         .catch(error => console.log(error.message));
+}
+
+function getImgURL(icon){
+    return `https://openweathermap.org/img/wn/${icon}@2x.png`
 }
 
 function getWindDirection(degree) {

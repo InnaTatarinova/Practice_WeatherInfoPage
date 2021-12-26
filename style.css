@@ -21,18 +21,6 @@
     background-size: cover;
 }
 
-/* #weatherInfoBlock_Kyiv{
-    background-image: url("img/Kyiv.jpg");   
-}
-
-#weatherInfoBlock_London{
-    background-image: url("img/London.jpg");
-}
-
-#weatherInfoBlock_NY{
-    background-image: url("img/NY.jpg");
-} */
-
 span{
     display: block;
     text-align: center;
@@ -41,21 +29,21 @@ span{
 }
 
 .cityName {
-    font-size: 26px;
+    font-size: 36px;
 }
 
 .temperature{
-    font-size: 46px;
+    display: flex;
+    flex-direction: row;
+    font-size: 36px;
     margin-top: 40px;
-}
-
-.img_weather{
-    width: 50px;
-    height: 50px;
-    background-color: thistle;
     margin-left: auto;
     margin-right: auto;
-   
+    justify-content:center;
+}
+
+.temperature span{
+    margin-top: 30px;
 }
 
 
@@ -76,7 +64,7 @@ table{
     margin-top: 30px;      
 }
 
-.anotherWeatherElement{
+.anotherInfoAboutWeather span{
     margin:30px, 30px;
 }
 
