@@ -11,7 +11,7 @@
 
 <body>
     <div class="main_background">
-        
+
 
     </div>
 
@@ -22,9 +22,9 @@
 
         <div class="temperature">
             <span>{{temp}}°F</span>
-            <img class="img_weather" src="{{img}}"/>
+            <img class="img_weather" src="{{img}}" />
         </div>
-        
+
         <div class="anotherInfoAboutWeather">
             <span id="wind_direction">Ветер <br>{{wind_direction}}</span>
             <span id="wind_speed">Скорость ветра <br>{{wind_speed}}м/сек</span>
@@ -32,7 +32,36 @@
             <span id="sunrise">Восход <br> {{sunrise}}</span>
             <span id="sunset">Закат <br> {{sunset}}</span>
         </div>
+
+
+        <table>
+            <!-- {{#arrMyValues}} -->
+            <tr class="day">
+                <th>{{Day}}</th>
+            </tr>
+            <tr class="plan_temp">
+                <th>{{temperature}}</th>
+               
+            </tr>
+            <tr class="imgPlanWeather">
+                <th>
+                    <img class = "icon" src="{{img}}" />
+                </th>
+
+            </tr>
+            <!-- {{/arrMyValues}} -->
+
+        </table>
+
+
+
+
+
+
+
     </template>
+
+
 
 
     <!-- <div class="img_weather"style="background-image: url('{{img}}');" ></div>
@@ -149,8 +178,9 @@
 
 
     <script src="index.js">  </script>
-    <script src="mustache.min.js"></script>
-
+    <!-- <script src="lib/mustache.js"></script> -->
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script src="render.js"></script>
 
 </body>
 
