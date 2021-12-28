@@ -10,9 +10,15 @@
 </head>
 
 <body>
+    <div class="radioButton">
+        <p><input name="tempMeasure" type="radio" value="Cel">°C</p>
+        <p><input name="tempMeasure" type="radio" value="Far" checked>°F</p>
+    </div>
+
+
     <div class="main_background">
-
-
+            
+      
     </div>
 
 
@@ -21,7 +27,7 @@
         <span class="cityName">{{name}}</span>
 
         <div class="temperature">
-            <span>{{temp}}°F</span>
+            <span>{{temp}}°</span>
             <img class="img_weather" src="{{img}}" />
         </div>
 
@@ -32,32 +38,42 @@
             <span id="sunrise">Восход <br> {{sunrise}}</span>
             <span id="sunset">Закат <br> {{sunset}}</span>
         </div>
-
-
         <table>
-            <!-- {{#arrMyValues}} -->
-            <tr class="day">
-                <th>{{Day}}</th>
+            <tr>
+                <td>{{Day1}}</td>
+                <td>{{Day2}}</td>
+                <td>{{Day3}}</td>
+                <td>{{Day4}}</td>
+                <td>{{Day5}}</td>
             </tr>
-            <tr class="plan_temp">
-                <th>{{temperature}}</th>
-               
-            </tr>
-            <tr class="imgPlanWeather">
-                <th>
-                    <img class = "icon" src="{{img}}" />
-                </th>
 
+            <tr>
+                <td class="icon">
+                    <img src="{{img1}}" />
+                </td>
+                <td class="icon">
+                    <img src="{{img2}}" />
+                </td>
+                <td class="icon">
+                    <img src="{{img3}}" />
+                </td>
+                <td class="icon">
+                    <img src="{{img4}}" />
+                </td>
+                <td class="icon">
+                    <img src="{{img5}}" />
+                </td>
             </tr>
-            <!-- {{/arrMyValues}} -->
+
+            <tr>
+                <td>{{temperature1}}°</td>
+                <td>{{temperature2}}°</td>
+                <td>{{temperature3}}°</td>
+                <td>{{temperature4}}°</td>
+                <td>{{temperature5}}°</td>
+            </tr>
 
         </table>
-
-
-
-
-
-
 
     </template>
 
