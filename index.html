@@ -10,15 +10,28 @@
 </head>
 
 <body>
-    <div class="radioButton">
-        <p><input name="tempMeasure" type="radio" value="Cel">°C</p>
-        <p><input name="tempMeasure" type="radio" value="Far" checked>°F</p>
-    </div>
+
 
 
     <div class="main_background">
-            
-      
+        <div class="radioButton">
+            <p>
+                <input name="tempMeasure" type="radio" value="Cel" checked>°C
+                <input name="tempMeasure" type="radio" value="Far">°F
+            </p>
+        </div>
+
+        <div class="radioButton">
+            <p>
+                <input name="speedMeasure" type="radio" value="m/sec" checked> м/сек
+                <input name="speedMeasure" type="radio" value="km/hours"> км/час
+            </p>
+        </div>
+
+        <div class="divForCity">
+
+        </div>
+
     </div>
 
 
@@ -26,17 +39,29 @@
 
         <span class="cityName">{{name}}</span>
 
-        <div class="temperature">
-            <span>{{temp}}°</span>
+        <div class="temperatureBlock">
+            <span class="temp">{{temp}}°</span>
             <img class="img_weather" src="{{img}}" />
         </div>
 
         <div class="anotherInfoAboutWeather">
-            <span id="wind_direction">Ветер <br>{{wind_direction}}</span>
-            <span id="wind_speed">Скорость ветра <br>{{wind_speed}}м/сек</span>
-            <span id="pressure"> Давление <br>{{pressure}}мм</span>
-            <span id="sunrise">Восход <br> {{sunrise}}</span>
-            <span id="sunset">Закат <br> {{sunset}}</span>
+            <span>Ветер
+                <span id="wind_direction">{{wind_direction}}</span>
+            </span>
+            <span >Скорость ветра
+                <span id="wind_speed">{{wind_speed}}м/сек</span>
+            </span>
+           <span>Давление
+               <span id="pressure">{{pressure}}мм</span> 
+           </span>
+           <span>Восход
+               <span id="sunrise"> {{sunrise}}</span> 
+           </span>
+           <span>Закат
+               <span id="sunset">{{sunset}}</span> 
+           </span>
+           
+           
         </div>
         <table>
             <tr>
@@ -66,11 +91,11 @@
             </tr>
 
             <tr>
-                <td>{{temperature1}}°</td>
-                <td>{{temperature2}}°</td>
-                <td>{{temperature3}}°</td>
-                <td>{{temperature4}}°</td>
-                <td>{{temperature5}}°</td>
+                <td class="temp">{{temperature1}}°</td>
+                <td class="temp">{{temperature2}}°</td>
+                <td class="temp">{{temperature3}}°</td>
+                <td class="temp">{{temperature4}}°</td>
+                <td class="temp">{{temperature5}}°</td>
             </tr>
 
         </table>
