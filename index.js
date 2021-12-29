@@ -56,8 +56,8 @@ getWeather();
 
 let radioBtnTemp = document.querySelectorAll('input[name="tempMeasure"]');
 for (let i = 0; i < radioBtnTemp.length; i++) {
-    radioBtnTemp[i].addEventListener("change", function (e) {
-        e.defaultPrevented();
+    radioBtnTemp[i].addEventListener("change", function () {
+        
         let val = this.value;
         let arr = document.querySelectorAll(".temp");
         for (let item of arr) {
@@ -78,8 +78,7 @@ for (let i = 0; i < radioBtnTemp.length; i++) {
 
 let radioBtnSpeed = document.querySelectorAll('input[name="speedMeasure"]');
 for (let i = 0; i < radioBtnSpeed.length; i++) {
-    radioBtnSpeed[i].addEventListener("change", function (e) {
-        e.defaultPrevented();
+    radioBtnSpeed[i].addEventListener("change", function () {
         let val = this.value;
         let arr = document.querySelectorAll("#wind_speed");
         for (let item of arr) {
@@ -120,7 +119,7 @@ async function getWeather() {
 async function getWeatherInfo(object) {
     await fetch(object.url)
         .then(response => response.json())
-        .then(json => {
+        .then(async (json) => {
             let temp = getTempCel(json.main.temp);
             let img = getImgURL(json.weather[0].icon);
             let wind_direction = getWindDirection(json.wind.deg);
@@ -131,7 +130,7 @@ async function getWeatherInfo(object) {
 
             let lon = json.coord.lon;
             let lat = json.coord.lat;
-            let weatherFor5Day =  getInfoFor5Day(lon, lat);
+            let weatherFor5Day = await getInfoFor5Day(lon, lat);
 
             let Day1 = weatherFor5Day[0].Day;
             let Day2 = weatherFor5Day[1].Day;
@@ -207,7 +206,7 @@ function getImgURL(icon) {
 function getWindDirection(degree) {
     if (degree == 90) {
         return "В"
-    } else if (degree == 360) {
+    } else if (degree == 360 || degree == 0) {
         return "C"
     } else if (degree == 270) {
         return "З"
